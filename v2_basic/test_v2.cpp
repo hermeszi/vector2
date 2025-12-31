@@ -58,41 +58,41 @@ int main()
 
     std::cout << "\n=== All Required Tests Complete ===" << std::endl;
     	
-    // vect2 v1; // 0, 0
-	// vect2 v2(1, 2); // 1, 2
-	// const vect2 v3(v2); // 1, 2
-	// vect2 v4 = v2; // 1, 2
+    vect2 v11; // 0, 0
+	vect2 v12(1, 2); // 1, 2
+	const vect2 v13(v2); // 1, 2
+	vect2 v14 = v12; // 1, 2
 
-	// std::cout << "v1: " << v1 << std::endl;
-	// std::cout << "v1: " << "{" << v1[0] << ", " << v1[1] << "}" << std::endl;
-	// std::cout << "v2: " << v2 << std::endl;
-	// std::cout << "v3: " << v3 << std::endl;
-	// std::cout << "v4: " << v4 << std::endl;
-	// std::cout << v4++ << std::endl; // 2, 3
-	// std::cout << ++v4 << std::endl; // 3, 4
-	// std::cout << v4-- << std::endl; // 2, 3
-	// std::cout << --v4 << std::endl; // 1, 2
+	std::cout << "v11: " << v11 << std::endl;
+	std::cout << "v11: " << "{" << v11[0] << ", " << v11[1] << "}" << std::endl;
+	std::cout << "v12: " << v12 << std::endl;
+	std::cout << "v13: " << v13 << std::endl;
+	std::cout << "v14: " << v14 << std::endl;
+	std::cout << v14++ << std::endl; // 2, 3
+	std::cout << ++v14 << std::endl; // 3, 4
+	std::cout << v14-- << std::endl; // 2, 3
+	std::cout << --v14 << std::endl; // 1, 2
 
 
-	// v2 += v3; // 2, 4
-	// v1 -= v2; // -2, -4
-	// v2 = v3 + v3 *2; // 3, 6
-	// v2 = 3 * v2; // 9, 18
-	// v2 += v2 += v3; // 20, 40
-	// v1 *= 42; // -84, -168
-	// v1 = v1 - v1 + v1;
+	v12 += v13; // 2, 4
+	v11 -= v12; // -2, -4
+	v12 = v13 + v13 *2; // 3, 6
+	v12 = 3 * v12; // 9, 18
+	v12 += v12 += v13; // 20, 40
+	v11 *= 42; // -84, -168
+	v11 = v11 - v11 + v11;
 
-	// std::cout << "v1: " << v1 << std::endl;
-	// std::cout << "v2: " << v2 << std::endl;
-	// std::cout << "-v2: " << -v2 << std::endl;
-	// std::cout << "v1[1]: " << v1[1] << std::endl;
-	// v1[1] = 12;
-	// std::cout << "v1[1]: " << v1[1] << std::endl;
-	// std::cout << "v3[1]: " << v3[1] << std::endl;
-	// std::cout << "v1 == v3: " << (v1 == v3) << std::endl;
-	// std::cout << "v1 == v1: " << (v1 == v1) << std::endl;
-	// std::cout << "v1 != v3: " << (v1 != v3) << std::endl;
-	// std::cout << "v1 != v1: " << (v1 != v1) << std::endl;
+	std::cout << "v11: " << v11 << std::endl;
+	std::cout << "v12: " << v12 << std::endl;
+	std::cout << "-v12: " << -v12 << std::endl;
+	std::cout << "v11[1]: " << v11[1] << std::endl;
+	v11[1] = 12;
+	std::cout << "v11[1]: " << v11[1] << std::endl;
+	std::cout << "v13[1]: " << v13[1] << std::endl;
+	std::cout << "v11 == v13: " << (v11 == v13) << std::endl;
+	std::cout << "v11 == v11: " << (v11 == v11) << std::endl;
+	std::cout << "v11 != v13: " << (v11 != v13) << std::endl;
+	std::cout << "v11 != v11: " << (v11 != v11) << std::endl;
 
     return 0;
 }
