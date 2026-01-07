@@ -1,55 +1,60 @@
-/* Header for the vect class */
-#ifndef VECT2_H
-#define VECT2_H
+#ifndef VECT2_HPP
+#define VECT2_HPP
 
 #include <iostream>
- 
+
 class vect2
 {
-private:
-   int x;
-   int y;
- 
+	int x;
+	int y;
 public:
-    explicit vect2(int x = 0, int y = 0);
-    //copy constructor
-    vect2(const vect2 & other);
-    //destructor
-    ~vect2() {};
-    //copy assignment
-    vect2 & operator= (const vect2 & rhs);
+	explicit vect2(int x = 0, int y = 0);
+	vect2 (const vect2 & other);
+	
+	~vect2() {};
+	
+	vect2 & operator=(const vect2 & rhs);
+	int & operator[](const int index);
+	int operator[](const int index) const;
+	
+	vect2 operator+(const int num) const {return vect2(x + num, y + num);};
+	vect2 operator-(const int num) const {return vect2(x - num, y - num);};
+	vect2 operator*(const int num) const {return vect2(x * num, y * num);};
 
-    //getter setters
-    int getX() const;
-    void setX(int x);
-    int getY() const;
-    void setY(int y);
-    //void setValue(int x, int y);
+	vect2 operator+(const vect2 & rhs) const {return vect2(x + rhs.x, y + rhs.y);};
+	vect2 operator-(const vect2 & rhs) const {return vect2(x - rhs.x, y - rhs.y);};
+	vect2 operator*(const vect2 & rhs) const {return vect2(x * rhs.x, y * rhs.y);};
+	
+	bool operator==(const vect2 & rhs) const {return (x == rhs.x && y == rhs.y);};
+	bool operator!=(const vect2 & rhs) const {return !(operator==(rhs));};
 
-    vect2 & operator+= (const vect2 & rhs); // v1 += v2
-    vect2 & operator+= (int num);           // v += 1
+	vect2 operator-() const {return vect2(-x, -y);};
 
-    vect2 & operator++ ();                      // ++c
-    const vect2 operator++ (int);         // v++
+	vect2 & operator--();
+	const vect2 operator--(int);
 
-    vect2 operator+ (const vect2 & rhs) const; // v1 + v2
-    vect2 operator- (const vect2 & rhs) const; // v1 - v2
-    vect2 operator* (const vect2 & rhs) const; // v1 * v2
-    vect2 operator/ (const vect2 & rhs) const; // v1 / v2
+	vect2 & operator++();
+	const vect2 operator++(int);
 
-    vect2 operator+ (int num) const; // v1 + 1
-    vect2 operator- (int num) const; // v1 - 1
-    vect2 operator* (int num) const; // v1 * 1
-    vect2 operator/ (int num) const; // v1 / 1
+	vect2 & operator+=(const int num);
+	vect2 & operator-=(const int num);
+	vect2 & operator*=(const int num);
 
-    bool operator== (const vect2 & rhs) const;   // v1 == v2
-    bool operator!= (const vect2 & rhs) const;   // v1 != v2
+	vect2 & operator+=(const vect2 & rhs);
+	vect2 & operator-=(const vect2 & rhs);
+	vect2 & operator*=(const vect2 & rhs);
 
-    const int & operator[] (int index) const;     // v[index] const
-    int & operator[] (int index);                // v[index]
+	
+	int getX() const {return x;}
+	int getY() const {return y;}
+	
+	friend vect2 operator+(const int num, const vect2 & rhs) {return vect2(num + rhs.x, num + rhs.y);};
+	friend vect2 operator-(const int num, const vect2 & rhs) {return vect2(num - rhs.x, num - rhs.y);};
+	friend vect2 operator*(const int num, const vect2 & rhs) {return vect2(num * rhs.x, num * rhs.y);};
+	
 };
 
-std::ostream & operator<< (std::ostream & out, const vect2 & v); // out << c
-std::istream & operator>> (std::istream & in, vect2 & v);        // in >> c
- 
+std::ostream & operator<<(std::ostream & out, const vect2 & v);
+
 #endif
+
